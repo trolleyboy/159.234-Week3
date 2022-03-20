@@ -6,32 +6,22 @@ class Tutorial_1_4 {
         
         boolean[] days;
         int peopleCount;
-        boolean complete;
+        int birthdaysFound;
 
         days = new boolean[365];
         peopleCount = 0;
-        complete = false;
+        birthdaysFound = 0;
 
-        while(true) {
+        while(birthdaysFound < 365) {
             double randomNumber = Math.random();
             randomNumber *= 365;
             int birthday = (int)randomNumber;
 
-            days[birthday] = true;
             peopleCount++;
 
-            for (int i = 0; i < days.length; i++) {
-                if (!days[i]) {
-                    //System.out.println("Day " + (i + 1) + " is still false.");
-                    complete = false;
-                    break;
-                } else {
-                    complete = true;
-                }
-            }
-
-            if (complete) {
-                break;
+            if (!days[birthday]) {
+                birthdaysFound++;
+                days[birthday] = true;
             }
         }
 
