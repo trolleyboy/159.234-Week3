@@ -15,7 +15,7 @@ public class Tutorial_1_1 {
             int birthday = (int)randomNumber;
             count++;
 
-            System.out.printf("Person %d has birthday on day %d%n", count, birthday);
+            System.out.printf("Person %d has a birthday on day %d%n", count, birthday);
 
             if (days[birthday]) {
                 break;
